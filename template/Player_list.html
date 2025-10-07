@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 class="mb-4">🏆 Player List</h2>
+
+<a href="{% url 'player_create' %}" class="btn btn-primary mb-3">+ Add Player</a>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Rank</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for player in players %}
+        <tr>
+            <td>{{ player.id }}</td>
+            <td>{{ player.name }}</td>
+            <td>{{ player.country }}</td>
+            <td>{{ player.rank }}</td>
+            <td>
+                <a href="{% url 'player_update' player.id %}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{% url 'player_delete' player.id %}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

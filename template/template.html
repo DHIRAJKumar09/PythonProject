@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Tennis Club</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Tennis Club</h1>
+    </header>
+    <main>
+        {% block p %}this is paragraph{% endblock p %}
+    </main>
+</body>
+</html>
